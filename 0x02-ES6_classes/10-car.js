@@ -9,7 +9,7 @@ export default class Car {
 
   cloneCar() {
     const clonedCar = new Car();
-    Object.getOwnPropertyNames(this).forEach(prop => {
+    Object.getOwnPropertyNames(this).forEach((prop) => {
       clonedCar[prop] = this[prop];
     });
     return clonedCar;
