@@ -11,6 +11,9 @@
   "scripts": {
     "test": "jest",
     "babel": "babel src -d dist",
-  "lint": "eslint ."
+  "lint": "eslint .",
+  "check-lint": "lint [0-9]*.js",
+    "dev": "npx babel-node",
+    "full-test": "./node_modules/.bin/eslint [0-9]*.js && jest"
   }
 }
