@@ -1,14 +1,18 @@
 /**
  * Get students by location.
+ * It returns an array of objects who are located in a specific city
+ * @param {{
+ *   id: Number,
+ *   firstName: String,
+ *   location: String
+ * }[]} students - The list of students.
+ * @param {String} city - The students' location.
  * @author Igbe Ajaga
- * @param {Array} studentList - An array of student objects
- * @param {string} city - The city to filter students by
- * @returns {Object[]} - An array of student objects in the specified city
+ * @returns
  */
-export default function getStudentsByLocation(studentList, city) {
-    if (!Array.isArray(studentList)) {
-        return [];
-    }
-
-    return studentList.filter(student => student.location === city);
+export default function getStudentsByLocation(students, city) {
+  if (students instanceof Array) {
+    return students.filter((student) => student.location === city);
+  }
+  return [];
 }
