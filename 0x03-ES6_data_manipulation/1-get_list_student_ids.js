@@ -6,7 +6,7 @@
  *   location: String
  * }[]} students - The list of students.
  * @author Igbe Ajaga
- * @returns {Number} - An array of student IDs
+ * @returns
  */
 export default function getListStudentIds(students) {
   if (students instanceof Array) {
