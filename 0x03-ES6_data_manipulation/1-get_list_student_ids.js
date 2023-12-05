@@ -1,7 +1,12 @@
 /**
  * Retrieve a list of students' IDs.
  * @author Igbe Ajaga
- * @param {Array} studentList - An array of student objects
+ * @param {{
+ *   id: Number,
+ *   firstName: String,
+ *   location: String
+ * }[]} studentList - The list of students.
+ * @param {String} city - The location.
  * @returns {number[]} - An array of student IDs
  */
 export default function getListStudentIds(studentList) {
