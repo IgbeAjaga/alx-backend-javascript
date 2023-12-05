@@ -1,5 +1,5 @@
 /**
- * Retrieves a list of students IDs 
+ * Retrieves a list of students IDs
  * @param {{
  *   id: Number,
  *   firstName: String,
