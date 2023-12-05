@@ -1,13 +1,12 @@
 /**
- * Retrieves a list of students IDs
- * 
+ * Retrieves a list of students IDs 
  * @param {{
  *   id: Number,
  *   firstName: String,
  *   location: String
  * }[]} students - The list of students.
  * @author Igbe Ajaga
- * @returns
+ * @returns {Number} - An array of student IDs
  */
 export default function getListStudentIds(students) {
   if (students instanceof Array) {
