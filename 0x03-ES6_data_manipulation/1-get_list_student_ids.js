@@ -10,9 +10,9 @@
  * @returns {number[]} - An array of student IDs
  */
 export default function getListStudentIds(studentList) {
-    if (!Array.isArray(studentList)) {
-        return [];
+    if (studentList instanceof Array) {
+        return studentList.map((student) => student.id);
     }
     
-    return studentList.map(student => student.id);
+    return [];
 }
