@@ -7,7 +7,7 @@ class StudentsController {
     const path = process.argv.length > 2 ? process.argv[2] : '';
 
     readDatabase(path)
-      .then((studentGroups) => {
+      .then((groupOfStudents) => {
         const responseParts = ['This is the list of our students'];
         const cmpFxn = (a, b) => {
           if (a[0].toLowerCase() < b[0].toLowerCase()) {
@@ -19,7 +19,7 @@ class StudentsController {
           return 0;
         };
 
-        for (const [field, group] of Object.entries(studentGroups).sort(cmpFxn)) {
+        for (const [field, group] of Object.entries(groupOfStudents).sort(cmpFxn)) {
           responseParts.push([
             `Number of students in ${field}: ${group.length}.`,
             'List:',
@@ -44,11 +44,11 @@ class StudentsController {
       return;
     }
     readDatabase(path)
-      .then((studentGroups) => {
+      .then((groupOfStudents) => {
         let responseText = '';
 
-        if (Object.keys(studentGroups).includes(major)) {
-          const group = studentGroups[major];
+        if (Object.keys(groupOfStudents).includes(major)) {
+          const group = groupOfStudents[major];
           responseText = `List: ${group.map((student) => student.firstname).join(', ')}`;
         }
         response.status(200).send(responseText);
